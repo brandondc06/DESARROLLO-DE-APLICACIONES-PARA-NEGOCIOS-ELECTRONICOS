@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+NOMBRE<input type=text id=nombre><br>
+<button onClick=imprimir()>Imprimir</button>
+
+
+<p id="demo"></p>
+
+
+<script>
+        function imprimir(){
+        let nombre = document.getElementById("nombre").value;
+        let text = nombre;
+       const myArray = text.split(" ");
+       let n=myArray[0];
+       let p=myArray[1];
+       let m=myArray[2];
+
+document.getElementById("demo").innerHTML = m.split("").reverse().join("") + " "
+ + p.split("").reverse().join("")+ " " + n.split("").reverse().join("");
+}
+
+
+</script>
+
+</body>
+</html>

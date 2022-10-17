@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+<center>NOMBRE<input type=text id=n><br><br></center>
+<center>EDAD<input type=text id=e><br><br></center>
+<center>SEXO<input type=text id=s><br><br></center>
+<center>LOCALIDAD<input type=text id=l><br><br></center>
+<center>COMIDA<input type=text id=c><br><br></center>
+<center><button onClick=guardar()>Guardar</button><br><br></center>
+<center><button onClick=imprimir()>Imprimir</button></center>
+<p id="demo"></p>
+<script>
+class Personas{
+constructor(n,e,s,l,c){
+this.nombre=n;
+this.edad=e;
+this.sexo=s;
+this.localidad=l;
+this.comida=c;
+      }
+     
+      setDatos(){
+      return  `La persona ${this.nombre} tiene ${this.edad} años es ${this.sexo} 
+      vive en ${this.localidad} y le gusta comer ${this.comida}`;
+      }
+}// beans
+
+var arreglo=new Array(1000);
+var contador=0;
+function guardar(){
+let n= document.getElementById("n").value;
+let e= document.getElementById("e").value;
+let s= document.getElementById("s").value;
+let l= document.getElementById("l").value;
+let c= document.getElementById("c").value;
+arreglo[contador]= new Personas(n,e,s,l,c);
+contador++;
+document.getElementById("n").value="";
+document.getElementById("e").value="";
+document.getElementById("s").value="";
+document.getElementById("l").value="";
+document.getElementById("c").value="";
+}
+function imprimir(){
+let salida="";
+for(let i=0;i<contador;i++)
+salida+=arreglo[i].setDatos()+"<br>";
+document.getElementById("demo").innerHTML=salida
+}
+</script>
+
+</body>

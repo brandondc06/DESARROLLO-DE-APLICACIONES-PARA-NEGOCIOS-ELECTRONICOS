@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+NOMBRE<input type=text id=n><br>
+LOCALIDAD<input type=text id=l><br>
+COMIDA<input type=text id=c><br>
+<button onClick=guardar()>Guardar</button>
+<button onClick=imprimir()>Imprimir</button>
+<p id="demo"></p>
+<script>
+class Personas{
+constructor(n,l,c){
+this.nombre=n;
+this.localidad=l;
+this.comida=c;
+      }
+     
+      getDatos(){
+      return  `La persona ${this.nombre} vive en ${this.localidad} le gusta comer ${this.comida}`;
+      }
+}// beans
+var ariadna=null;
+var arreglo=new Array(1000);
+var contador=0;
+function guardar(){
+let n= document.getElementById("n").value;
+let l= document.getElementById("l").value;
+let c= document.getElementById("c").value;
+arreglo[contador]= new Personas(n,l,c);
+contador++;
+document.getElementById("n").value="";
+document.getElementById("l").value="";
+document.getElementById("c").value="";
+}
+function imprimir(){
+let salida="";
+for(let i=0;i<contador;i++)
+salida+=arreglo[i].getDatos()+"<br>";
+document.getElementById("demo").innerHTML=salida
+}
+</script>
+
+</body>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo"></p>
+<script>
+
+
+let promedio= new Promise (function(resuelto,error){
+    let X=9;
+    let Y=8;
+    resultado=(x+y)/2;
+    if(resultado >=6){
+        resuelto("bien hecho");
+    } else
+        resuelto("error");
+});
+
+
+promedio.then(function(resultado){
+
+},function(){
+
+})
+
+
+promedio.then ();
+document.getElementById("demo").innerHTML=fibonacci;
+
+</script>
+
+</body>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+let promedio=new Promise(function(resolt, reject)
+{
+let X=8;
+let Y=8;
+resultado= (X+Y)/2;
+if(resultado>=100){
+resolt("aprobado");
+}else{
+reject("Reprobado")}
+});
+
+promedio.then(function (Resultado) { document.write(Resultado)
+}, function(error) {
+document.write(error)
+});
+</script>
+</html>

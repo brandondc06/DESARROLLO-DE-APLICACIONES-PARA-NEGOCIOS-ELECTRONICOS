@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo"></p>
+<script>
+
+
+let promedio= new Promise(function(resolve, reject){
+    var prom = [];
+    prom [1] = 1;
+     for(var i=2;i<100; i++){
+        prom[i]= prom[i + 2] + prom [i + 1] / prom[100];
+        if (prom <=0) {
+            resolve("aproba");
+        } else {
+            reject("no jaja");
+        }
+     }
+})
+
+promedio.then(function(prom){
+    document.write(prom)},function(resolve){
+        document.write(reject)
+    });
+
+
+
+</script>
+
+</body>
